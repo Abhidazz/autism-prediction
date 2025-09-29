@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: #f9f9f9;
+            margin: 40px;
+            text-align: center;
+            color: #333;
+        }
+
+        .card {
+            max-width: 600px;
+            margin: auto;
+            padding: 30px;
+            border-radius: 12px;
+            background: #fff;
+            box-shadow: 2px 4px 15px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            font-family: 'Merriweather', serif;
+            color: #4f46e5;
+            margin-bottom: 20px;
+        }
+
+        .result {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .prescription {
+            margin-top: 25px;
+            text-align: left;
+            padding: 20px;
+            border-radius: 10px;
+            background: #f1f5f9;
+            border-left: 6px solid #4f46e5;
+        }
+
+        .prescription h3 {
+            font-family: 'Merriweather', serif;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .prescription ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 25px;
+            text-decoration: none;
+            color: white;
+            background: #4f46e5;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        a:hover {
+            background: #3730a3;
+        }
+    </style>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="card">
+        <h2>Prediction Result</h2>
+        <p class="result"><strong>Prediction:</strong> {{ prediction }}</p>
+
+        {% if prediction == "Has Autism" %}
+        <div class="prescription">
+            <h3>Doctor’s Prescription & Guidance</h3>
+            <p>This screening suggests possible signs of Autism Spectrum Disorder (ASD). Please follow these steps for further support:</p>
+            <ul>
+                <li>Consult a child psychologist or developmental pediatrician for formal evaluation.</li>
+                <li>Consider therapies: speech therapy, occupational therapy, and behavioral therapy.</li>
+                <li>Encourage structured routines and provide a supportive learning environment.</li>
+                <li>Join local ASD support groups or counseling sessions for guidance.</li>
+                <li>Maintain regular checkups and healthy daily routines.</li>
+                <li>Contact your nearest consultant — <a class="google-link" href="https://www.google.com/search?q=Autism+doctor+near+me" target="_blank">Search on Google</a></li>
+            </ul>
+            <p><em>⚠️ This information is for educational purposes and does not replace professional medical advice.</em></p>
+        </div>
+        {% endif %}
+
+        <a href="/">Back to Form</a>
+    </div>
+</body>
+</html>
